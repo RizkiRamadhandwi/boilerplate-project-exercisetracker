@@ -113,9 +113,11 @@ app.get("/api/users/:_id/logs", async (req, res) => {
     date: e.date.toDateString(),
   }));
 
+  const count = exercises.length; // Calculate the count
+
   res.json({
     username: user.username,
-    count: exercises.lenght,
+    count, // Include the count here
     _id: user._id,
     log,
   });
